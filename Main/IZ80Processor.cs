@@ -233,7 +233,7 @@ namespace Konamiman.Z80dotNet
         /// <param name="portNumber">The port number to check</param>
         /// <returns>The current memory access mode for the port</returns>
         /// <exception cref="System.ArgumentException"><c>portNumber</c> is greater than 255.</exception>
-        MemoryAccessMode GetPortAccessMode(byte portNumber);
+        MemoryAccessMode GetPortAccessMode(ushort portNumber);
 
         /// <summary>
         /// Registers a new interrupt source.
@@ -355,7 +355,7 @@ namespace Konamiman.Z80dotNet
         /// </summary>
         /// <param name="portNumber">Port number to het the wait states for</param>
         /// <returns>Current wait states for the specified port</returns>
-        byte GetPortWaitStates(byte portNumber);
+        byte GetPortWaitStates(ushort portNumber);
 
         /// <summary>
         /// Gets or set the instruction executor.

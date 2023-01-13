@@ -412,12 +412,12 @@ namespace Konamiman.Z80dotNet.Tests.InstructionsExecution
                 Memory[address] = value;
             }
 
-            public byte ReadFromPort(byte portNumber)
+            public byte ReadFromPort(ushort portNumber)
             {
                 return Ports[portNumber];
             }
 
-            public void WriteToPort(byte portNumber, byte value)
+            public void WriteToPort(ushort portNumber, byte value)
             {
                 Ports[portNumber] = value;
             }

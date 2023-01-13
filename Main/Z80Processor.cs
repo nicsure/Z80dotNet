@@ -10,7 +10,7 @@ namespace Konamiman.Z80dotNet
     public class Z80Processor : IZ80Processor, IZ80ProcessorAgent
     {
         private const int MemorySpaceSize = 65536;
-        private const int PortSpaceSize = 256;
+        private const int PortSpaceSize = 65536;
 
         private const decimal MaxEffectiveClockSpeed = 100M;
         private const decimal MinEffectiveClockSpeed = 0.001M;
@@ -452,7 +452,7 @@ namespace Konamiman.Z80dotNet
             SetArrayContents(portsAccessModes, startPort, length, mode);
         }
 
-        public MemoryAccessMode GetPortAccessMode(byte portNumber)
+        public MemoryAccessMode GetPortAccessMode(ushort portNumber)
         {
             return portsAccessModes[portNumber];
         }
@@ -583,7 +583,7 @@ namespace Konamiman.Z80dotNet
             SetArrayContents(portWaitStates, startPort, length, waitStates);
         }
 
-        public byte GetPortWaitStates(byte portNumber)
+        public byte GetPortWaitStates(ushort portNumber)
         {
             return portWaitStates[portNumber];
         }
@@ -820,7 +820,7 @@ namespace Konamiman.Z80dotNet
                 beforeEventArgs.CancelMemoryAccess);
         }
 
-        public byte ReadFromPort(byte portNumber)
+        public byte ReadFromPort(ushort portNumber)
         {
             FailIfNoExecutionContext();
             FailIfNoInstructionFetchComplete();
@@ -834,7 +834,7 @@ namespace Konamiman.Z80dotNet
                 GetPortWaitStates(portNumber));
         }
 
-        public void WriteToPort(byte portNumber, byte value)
+        public void WriteToPort(ushort portNumber, byte value)
         {
             FailIfNoExecutionContext();
             FailIfNoInstructionFetchComplete();

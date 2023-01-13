@@ -15,7 +15,7 @@ namespace Konamiman.Z80dotNet
         {
             FetchFinished();
 
-            var value = ProcessorAgent.ReadFromPort(Registers.C);
+            var value = ProcessorAgent.ReadFromPort((ushort)Registers.BC);
             Registers.A = value;
 
             Registers.SF = value.GetBit(7);
@@ -35,7 +35,7 @@ namespace Konamiman.Z80dotNet
         {
             FetchFinished();
 
-            var value = ProcessorAgent.ReadFromPort(Registers.C);
+            var value = ProcessorAgent.ReadFromPort((ushort)Registers.BC);
             Registers.B = value;
 
             Registers.SF = value.GetBit(7);
@@ -55,7 +55,7 @@ namespace Konamiman.Z80dotNet
         {
             FetchFinished();
 
-            var value = ProcessorAgent.ReadFromPort(Registers.C);
+            var value = ProcessorAgent.ReadFromPort((ushort)Registers.BC);
             Registers.C = value;
 
             Registers.SF = value.GetBit(7);
@@ -75,7 +75,7 @@ namespace Konamiman.Z80dotNet
         {
             FetchFinished();
 
-            var value = ProcessorAgent.ReadFromPort(Registers.C);
+            var value = ProcessorAgent.ReadFromPort((ushort)Registers.BC);
             Registers.D = value;
 
             Registers.SF = value.GetBit(7);
@@ -95,7 +95,7 @@ namespace Konamiman.Z80dotNet
         {
             FetchFinished();
 
-            var value = ProcessorAgent.ReadFromPort(Registers.C);
+            var value = ProcessorAgent.ReadFromPort((ushort)Registers.BC);
             Registers.E = value;
 
             Registers.SF = value.GetBit(7);
@@ -115,7 +115,7 @@ namespace Konamiman.Z80dotNet
         {
             FetchFinished();
 
-            var value = ProcessorAgent.ReadFromPort(Registers.C);
+            var value = ProcessorAgent.ReadFromPort((ushort)Registers.BC);
             Registers.H = value;
 
             Registers.SF = value.GetBit(7);
@@ -135,7 +135,7 @@ namespace Konamiman.Z80dotNet
         {
             FetchFinished();
 
-            var value = ProcessorAgent.ReadFromPort(Registers.C);
+            var value = ProcessorAgent.ReadFromPort((ushort)Registers.BC);
             Registers.L = value;
 
             Registers.SF = value.GetBit(7);
@@ -155,7 +155,7 @@ namespace Konamiman.Z80dotNet
         {
             FetchFinished();
 
-            var value = ProcessorAgent.ReadFromPort(Registers.C);
+            var value = ProcessorAgent.ReadFromPort((ushort)Registers.BC);
 
             Registers.SF = value.GetBit(7);
             Registers.ZF = (value == 0);

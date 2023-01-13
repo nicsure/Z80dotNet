@@ -46,14 +46,14 @@
         /// </summary>
         /// <param name="portNumber">Port number to read from</param>
         /// <returns>Obtained byte</returns>
-        byte ReadFromPort(byte portNumber);
+        byte ReadFromPort(ushort portNumber);
 
         /// <summary>
         /// Writes one byte to an I/O port.
         /// </summary>
         /// <param name="portNumber">Port number to write to</param>
         /// <param name="value">Value to write</param>
-        void WriteToPort(byte portNumber, byte value);
+        void WriteToPort(ushort portNumber, byte value);
 
         /// <summary>
         /// Returns the current register set used by the processor.
